@@ -25,15 +25,30 @@ def create_freq_map(string):
     return freq_map
         
 
-def is_permutation(str1, str2): # Time O(n) | Space O(n)
+# def is_permutation(str1, str2): # Time O(n) | Space O(n)
+#     # validation
+#     if str1 == "" or str2 == "":
+#         return False
+#     if len(str1) != len(str2):
+#         return False
+
+#     str1_freq = create_freq_map(str1)
+#     str2_freq = create_freq_map(str2)
+
+#     return str1_freq == str2_freq
+
+# Alternate method using Counter class
+from collections import Counter
+
+def is_permutation(str1, str2):
     # validation
     if str1 == "" or str2 == "":
         return False
+    
+    if len(str1) != len(str2):
+        return False
 
-    str1_freq = create_freq_map(str1)
-    str2_freq = create_freq_map(str2)
-
-    return str1_freq == str2_freq
+    return Counter(str1) == Counter(str2)
 
 
 if __name__=='__main__':
