@@ -37,7 +37,7 @@ def mutual_anagrams(s, p):
     while start < len(s) - len(p) + 1:
         # hash map of s substring
         sub_s_hash = Counter(s[start:start + end])
-        # if hash map of s == hash map of p
+        
         if p_hash == sub_s_hash:
             result.append(start)
         start += 1
